@@ -19,13 +19,18 @@ h1 {
   font-family: "Outfit", sans-serif;
 }
 
+.Timer {
+  display: inline-block;
+}
+
 .answers {
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 13px;
+  margin-top: 50px;
 }
 .answers2 {
   text-align: center;
+
+  margin-bottom: 13px;
 }
 
 .answers div {
@@ -37,32 +42,29 @@ h1 {
 }
 
 .button-answer {
-  width: 300px;
+  width: 280px;
   height: 50px;
+  margin: 13px;
+  color: white;
   border: none;
   border-color: white;
   background-color: rgba(255, 255, 255, 0.151);
   border-radius: 30px;
   box-shadow: -1px -1px 1px 1px white;
-}
-
-button p {
+  overflow-wrap: break-word;
+  font-family: "Outfit", sans-serif;
   font-weight: bold;
-  color: white;
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  vertical-align: bottom;
 }
 
 .question-number {
-  color: #ac1286;
+  color: #ac1286c0;
   text-align: center;
   margin-top: 75px;
   font-family: "Outfit", sans-serif;
+  letter-spacing: 3px;
 }
 
 span {
-  color: white;
+  color: rgba(255, 255, 255, 0.781);
 }
