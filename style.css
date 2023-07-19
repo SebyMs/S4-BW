@@ -91,16 +91,14 @@ span {
   width: 100%;
   height: 100%;
   fill: transparent;
-  stroke-width: 17;
+  stroke-width: 13;
   stroke: #43424258;
   transform: translate(10px, 10px);
 }
 
 #time .circle svg circle:nth-child(2) {
-  stroke: var(color);
-  stroke-dasharray: 440;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset linear 60s;
+  stroke-dasharray: 385;
+  stroke-dashoffset: 385;
 }
 
 #time div {
@@ -142,5 +140,5 @@ span {
   height: 15px;
   background: var(color);
   border-radius: 50px;
-  box-shadow: 0 0 20px var(color);
+  box-shadow: 0 0 20px var(color), 0 0 60px var(color);
 }
