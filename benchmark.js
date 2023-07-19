@@ -2,6 +2,8 @@ const btnInteraction = function (event) {
   elemento = event.target;
   elemento.classList.toggle("buttonColored");
 };
+// const risposteSotto = document.querySelector("section.answers2");
+// console.log(risposteSotto);
 
 const btnSelector = function () {
   const risposte = document.querySelectorAll(".button-answer");
@@ -106,7 +108,7 @@ const nextQuestion = function () {
   const domande = document.querySelector("h1");
   domande.innerText = containerDomandeRisposte[contatoreClickAvanti].question;
   const questionNumber = document.querySelector("h3 span");
-  questionNumber.innerText = "QUESTION" + y;
+  questionNumber.innerText = "QUESTION " + y;
   contatoreClickAvanti += 1;
   y += 1;
   const risposte = document.querySelectorAll(".button-answer");
@@ -124,7 +126,6 @@ const cambiaRisposte = function () {
   let arrayRisposte = [];
   const risposte = document.querySelectorAll(".button-answer");
   arrayRisposte = containerDomandeRisposte.map((element) => element.incorrect_answers);
-  console.log(arrayRisposte);
   let x = 0;
 
   for (let j = 0; j < arrayRisposte.length; j++) {
@@ -139,5 +140,40 @@ const cambiaRisposte = function () {
     risposte[x].innerText = arrayRisposte[h][w];
     x += 1;
   }
+
+  if (arrayRisposte[h].length == 2) {
+    const RisposteSotto = document.querySelector("section.answers2"); // risposte =2 mette classe hide sul buttonrisposte sotto
+    RisposteSotto.classList.add("hide");
+  } else {
+    const RisposteSotto = document.querySelector("section.answers2"); // risposte diverse  da 2 rimuove la classe hide
+    RisposteSotto.classList.remove("hide");
+  }
+
   h += 1;
 };
+
+let seconds = document.getElementById("seconds");
+let ss = document.getElementById("ss");
+let secDot = document.querySelector(".dots-sec_dot");
+
+let countDown = 60; // Imposta il valore di countdown a 60 secondi
+let s = countDown; // Imposta il valore iniziale dei secondi al valore di countdown
+
+seconds.innerText = s; // Mostra il valore iniziale dei secondi
+let x = setInterval(function () {
+  s--;
+
+  seconds.innerText = s; // Aggiorna il valore dei secondi
+
+  ss.style.strokeDashoffset = 385 + (385 * s) / countDown;
+  ss.style.stroke = "#00FFFF";
+
+  if (s === 0) {
+    clearInterval(x); // Ferma il timer quando raggiunge 0
+  }
+}, 1000);
+const buttonAvanti = document.getElementById("btnAvanti");
+console.log(buttonAvanti);
+if (buttonAvanti.onclick) {
+  s = 60;
+}

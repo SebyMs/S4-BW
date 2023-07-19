@@ -10,38 +10,37 @@
     <title>Benchmark Page</title>
   </head>
   <body>
-    <section class="header">
-      <img src="./assets/epicode_logo.png" alt="Logo Epicode" />
-    </section>
+    <img src="./assets/epicode_logo.png" alt="Logo Epicode" />
     <div id="time">
-      <div class="circle" style="color: white">
-        <div class="timer"></div>
+      <div class="circle" style="color: #04fc53">
+        <div class="dots-sec_dot"></div>
         <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="60" cy="60" r="60"></circle>
+          <circle cx="60" cy="60" r="60" id="ss"></circle>
         </svg>
-        <div id="secondiRimanenti">00</div>
+        <div id="seconds"></div>
       </div>
     </div>
 
     <h1>How can I create a checkbox in HTML?</h1>
-
     <section class="answers">
       <div>
-        <button class="button-answer">ciao</button>
-        <button class="button-answer">ciao</button>
+        <button class="button-answer">div type="checkbox"</button>
+
+        <button class="button-answer">form type="checkbox"</button>
       </div>
     </section>
     <section class="answers2">
       <div>
-        <button class="button-answer">ciao</button>
+        <button class="button-answer">input type="checkbox"</button>
 
-        <button class="button-answer">dgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgddgdfgdfgdgdfgsdfs</button>
+        <button class="button-answer">div checkbox</button>
       </div>
     </section>
+    <div><button id="btnAvanti" onclick="nextQuestion(event)">Prossima➜</button></div>
     <footer>
-      <h4 class="question-number"><span>QUESTION 1 </span>/10</h4>
+      <h3 class="question-number"><span>QUESTION 0 </span>/ 10</h3>
     </footer>
-    <script src="index.js"></script>
+    <script src="/benchmark.js"></script>
   </body>
 </html>
