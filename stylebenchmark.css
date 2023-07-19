@@ -1,0 +1,104 @@
+body {
+    background-image: url(./assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  img {
+    width: 150px;
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+  
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-inline: 250px;
+    margin-top: 120px;
+    color: white;
+    font-family: "Outfit", sans-serif;
+  }
+  
+  .answers {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .answers2 {
+    text-align: center;
+    margin-bottom: 13px;
+  }
+  
+  .answers div {
+    display: inline-block;
+  }
+  
+  .answers2 div {
+    display: inline-block;
+  }
+  
+  .button-answer {
+    width: 280px;
+    height: 50px;
+    margin: 13px;
+    color: white;
+    border: none;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.151);
+    border-radius: 30px;
+    box-shadow: inset 0px 1px 0px 1px rgba(255, 253, 253, 0.781), inset 0px -2px 1px 1px rgba(255, 255, 255, 0.137),
+      inset 16px 0px 0px -78px rgba(255, 255, 255, 0.205);
+    overflow-wrap: break-word;
+    font-family: "Outfit", sans-serif;
+    font-weight: bold;
+    vertical-align: bottom;
+  }
+  
+  .question-number {
+    color: #ac1286c0;
+    text-align: center;
+    margin-top: 75px;
+    font-family: "Outfit", sans-serif;
+    letter-spacing: 3px;
+  }
+  
+  span {
+    color: rgba(255, 255, 255, 0.781);
+  }
+
+  /* #time{
+    display: flex;
+    gap:30 px;
+  } */
+
+  #time .circle
+  {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+  }
+
+  #time .circle svg{
+    position: relative;                 /* posizione timer*/
+    width: 300px;
+    height: 300px;
+   transform:rotate(270deg) ;
+  }
+
+  #time .circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: black;   /*interno circonferenza*/
+    stroke-width: 8;  /* larghezza circonferenza*/
+    stroke: #ac1286c0;   
+    transform: translate(100px,100px); /* posizione grafico*/
+  }
+  
+#time .circle svg circle:nth-child(2){
+    stroke: var(color) ;
+    stroke-dasharray: 440;
+}
+
+#time div {
+    position: absolute;
+}
