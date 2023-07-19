@@ -19,17 +19,12 @@ h1 {
   font-family: "Outfit", sans-serif;
 }
 
-.Timer {
-  display: inline-block;
-}
-
 .answers {
   text-align: center;
   margin-top: 50px;
 }
 .answers2 {
   text-align: center;
-
   margin-bottom: 13px;
 }
 
@@ -50,7 +45,8 @@ h1 {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.151);
   border-radius: 30px;
-  box-shadow: -1px -1px 1px 1px white;
+  box-shadow: inset 0px 1px 0px 1px rgba(255, 253, 253, 0.781), inset 0px -2px 1px 1px rgba(255, 255, 255, 0.137),
+    inset 16px 0px 0px -78px rgba(255, 255, 255, 0.205);
   overflow-wrap: break-word;
   font-family: "Outfit", sans-serif;
   font-weight: bold;
@@ -67,4 +63,84 @@ h1 {
 
 span {
   color: rgba(255, 255, 255, 0.781);
+}
+
+#time {
+  display: flex;
+  gap: 30px;
+  font-family: "Outfit", sans-serif;
+}
+
+#time .circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time .circle svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+#time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 17;
+  stroke: #43424258;
+  transform: translate(10px, 10px);
+}
+
+#time .circle svg circle:nth-child(2) {
+  stroke: var(color);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset linear 60s;
+}
+
+#time div {
+  position: absolute;
+  padding-right: 6px;
+  padding-bottom: 10px;
+  font-weight: 200;
+  color: #fff;
+  font-size: 3rem;
+}
+
+#time div span {
+  text-align: center;
+  position: absolute;
+
+  transform: translateX(-50%) translateY(-10px);
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+#time .dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+#time .dots::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: var(color);
+  border-radius: 50px;
+  box-shadow: 0 0 20px var(color);
 }
