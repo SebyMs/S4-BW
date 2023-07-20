@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="benchmarkStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet" />
+    <title>Benchmark Page</title>
+  </head>
+  <body>
+    <img src="./assets/epicode_logo.png" alt="Logo Epicode" />
+    <div id="time">
+      <div class="circle" style="color: #04fc53">
+        <div class="dots-sec_dot"></div>
+        <svg>
+          <circle cx="60" cy="60" r="60"></circle>
+          <circle cx="60" cy="60" r="60" id="ss"></circle>
+        </svg>
+        <div id="seconds"></div>
+      </div>
+    </div>
+
+    <h1>How can I create a checkbox in HTML?</h1>
+    <section class="answers">
+      <div>
+        <button class="button-answer">div type="checkbox"</button>
+
+        <button class="button-answer">form type="checkbox"</button>
+      </div>
+    </section>
+    <section class="answers2">
+      <div>
+        <button class="button-answer">input type="checkbox"</button>
+
+        <button class="button-answer">div checkbox</button>
+      </div>
+    </section>
+    <div><button id="btnAvanti" onclick="nextQuestion(event)">Prossima➜</button></div>
+    <footer>
+      <h3 class="question-number"><span>QUESTION 0 </span>/ 10</h3>
+    </footer>
+    <script src="/benchmark.js"></script>
+  </body>
+</html>
