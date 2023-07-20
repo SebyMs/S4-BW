@@ -12,7 +12,7 @@ let x = setInterval(function () {
 
   seconds.innerText = s; // Aggiorna il valore dei secondi
 
-  ss.style.strokeDashoffset = 385 + (385 * s) / countDown;
+  ss.style.strokeDashoffset = 382 + (382 * s) / countDown;
   ss.style.stroke = "#00FFFF";
 
   if (s === 0) {

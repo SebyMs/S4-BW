@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/result.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header><img src="/assets/epicode_logo.png" alt="epicode" /></header>
+    <div class="Title">
+      <h1>Results</h1>
+      <p>The summary of your answers:</p>
+    </div>
+    <main class="risultatiMain">
+      <div class="results1">
+        <p class="fontResults1">Correct</p>
+        <p class="fontResults1" style="font-weight: bolder">60%</p>
+        <p class="results-questions1">6/10 questions</p>
+      </div>
+      <div id="Grafico">
+        <svg width="100%" height="100%" viewBox="0 0 40 42" class="circle">
+          <circle class="hole"></circle>
+          <circle class="ring"></circle>
+
+          <circle class="segment"></circle>
+          <circle class="segment2"></circle>
+          <g class="chart-text" transform="rotate(90 21 21)">
+            <text
+              x="53%"
+              y="35%"
+              class="chart-number"
+              fill="white"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="2.3"
+            >
+              Congratulations!
+            </text>
+            <text
+              x="53%"
+              y="41%"
+              class="chart-label"
+              fill="#00FFFF"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="2.3"
+            >
+              You passed the exam.
+            </text>
+            <text
+              x="53%"
+              y="53%"
+              class="chart-number"
+              fill="white"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="1.5"
+              font-family="Inter"
+              ,
+              sans-serif;
+            >
+              We'll send you the certificate
+            </text>
+            <text
+              x="53%"
+              y="58%"
+              class="chart-number"
+              fill="white"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="1.5"
+              font-family="Inter"
+              ,
+              sans-serif;
+            >
+              in few minutes.
+            </text>
+            <text
+              x="53%"
+              y="63%"
+              class="chart-number"
+              fill="white"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="1.5"
+              font-family="Inter"
+              ,
+              sans-serif;
+            >
+              Check your email (including
+            </text>
+            <text
+              x="53%"
+              y="68%"
+              class="chart-number"
+              fill="white"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="1.5"
+              font-family="Inter"
+              ,
+              sans-serif;
+            >
+              promotions / spam folder)
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class="results2">
+        <p class="fontResults2">Wrong</p>
+        <p class="fontResults2" style="font-weight: bold">40%</p>
+        <p class="results-questions2">4/10 questions</p>
+      </div>
+    </main>
+    <footer>
+      <div class="rateUs">
+        <button><a href="/feedback.html">RATE US</a></button>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -14,7 +14,6 @@ h1 {
   font-size: 40px;
   text-align: center;
   margin-inline: 250px;
-  margin-top: 120px;
   color: white;
   font-family: "Outfit", sans-serif;
 }
@@ -39,7 +38,8 @@ h1 {
 .button-answer {
   width: 280px;
   height: 50px;
-  margin: 13px;
+  margin-left: 13px;
+  margin-bottom: 10px;
   color: white;
   border: none;
   border-color: white;
@@ -55,8 +55,8 @@ h1 {
 
 .question-number {
   color: #ac1286c0;
-  text-align: center;
-  margin-top: 75px;
+  display: inline-block;
+  margin-left: 80px;
   font-family: "Outfit", sans-serif;
   letter-spacing: 3px;
 }
@@ -67,14 +67,14 @@ span {
 
 #time {
   display: flex;
+  justify-content: end;
   gap: 30px;
   font-family: "Outfit", sans-serif;
 }
 
 #time .circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  margin-right: 80px;
 
   display: flex;
   justify-content: center;
@@ -97,8 +97,8 @@ span {
 }
 
 #time .circle svg circle:nth-child(2) {
-  stroke-dasharray: 385;
-  stroke-dashoffset: 385;
+  stroke-dasharray: 382;
+  stroke-dashoffset: 382;
 }
 
 #time div {
@@ -141,4 +141,24 @@ span {
   background: var(color);
   border-radius: 50px;
   box-shadow: 0 0 20px var(color), 0 0 60px var(color);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+#btnAvanti {
+  background-color: transparent;
+  color: white;
+  text-align: end;
+  margin-right: 80px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  padding-block: 13px;
+  padding-inline: 50px;
+  box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.205);
+  border: none;
 }
