@@ -9,14 +9,12 @@
   <body>
     <header>
       <img src="./assets/epicode_logo.png" alt="" />
-      <h1>
-        Welcome to
-        <p>your exam</p>
-      </h1>
+      <h1 class="title">Welcome to</h1>
+      <span id="title2">your exam</span>
     </header>
     <main>
       <p>Instruction</p>
-      <p>
+      <p id="content">
         We don t expect most engineers to know the ansers to all of these <br />questions,so don t worry if you re
         unsure of a few of them
       </p>
@@ -37,9 +35,11 @@
       </div>
     </main>
     <footer>
-      <input type="checkbox" required />
-      <span>I promise to answer myself without help from anyone</span>
-      <button>PROCEED</button>
+      <form action="./benchmark html.html">
+        <input type="checkbox" required />
+        <span>I promise to answer myself without help from anyone</span>
+        <input class="button" type="submit" value="PROCEED" />
+      </form>
     </footer>
   </body>
 </html>
