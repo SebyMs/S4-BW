@@ -1,19 +1,10 @@
-const btnInteraction = function (event) {
-  elemento = event.target;
-  elemento.classList.toggle("buttonColored");
-};
-// const risposteSotto = document.querySelector("section.answers2");
-// console.log(risposteSotto);
-
 const btnSelector = function () {
   const risposte = document.querySelectorAll(".button-answer");
-  risposte.forEach((element) => element.addEventListener("click", btnInteraction));
+  risposte.forEach((element) => element.setAttribute("onclick", "btnInteraction(event)"));
   const btnAvanti = document.getElementById("btnAvanti");
-  console.log(btnAvanti);
   btnAvanti.setAttribute("onclick", "nextQuestion(event)");
 };
 btnSelector();
-
 const containerDomandeRisposte = [
   {
     category: "Science: Computers",
@@ -101,82 +92,121 @@ const containerDomandeRisposte = [
     incorrect_answers: ["Assembly", "C#", "ECMAScript"],
   },
 ];
+const buttonDaEliminare = document.querySelector(".answers2");
+buttonDaEliminare.style.display = "none";
+let h = 1;
+const cambiaRisposte = function () {
+  let arrayRisposte = [];
+  const risposteButton = document.querySelectorAll(".button-answer");
+  const buttonDaEliminare = document.querySelector(".answers2");
+  //console.log(buttonDaEliminare);
 
-let y = 1;
-let contatoreClickAvanti = 0;
+  arrayRisposte = containerDomandeRisposte.map((element) => element.incorrect_answers);
+  let x = 0;
+  for (let w = 0; w < 4; w++) {
+    risposteButton[w].innerText = " ";
+  }
+  if (arrayRisposte[h].length == 2) {
+    n = 2;
+    buttonDaEliminare.style.display = "none";
+  } else {
+    n = 4;
+    buttonDaEliminare.style.display = "block";
+  }
+
+  //console.log(n);
+  for (let w = 0; w < n; w++) {
+    risposteButton[x].innerText = " ";
+    risposteButton[x].innerText = arrayRisposte[h][w];
+    x += 1;
+  }
+  h += 1;
+};
+let intervallo;
+let countDown = 60;
+const graficoTorta = function () {
+  let seconds = document.getElementById("seconds");
+  let ss = document.getElementById("ss");
+  let secDot = document.querySelector(".dots-sec_dot");
+
+  // Imposta il valore di countdown a 60 secondi
+  let s = countDown; // Imposta il valore iniziale dei secondi al valore di countdown
+
+  seconds.innerText = s; // Mostra il valore iniziale dei secondi
+  intervallo = setInterval(function () {
+    s--;
+
+    seconds.innerText = s; // Aggiorna il valore dei secondi
+
+    ss.style.strokeDashoffset = 385 + (385 * s) / countDown;
+    ss.style.stroke = "#00FFFF";
+
+    if (s === 0) {
+      clearInterval(intervallo); // Ferma il timer quando raggiunge 0
+    }
+  }, 1000);
+};
+
+let y = 2;
+let contatoreClickAvanti = 1;
 const nextQuestion = function () {
   const domande = document.querySelector("h1");
+  const buttonAvanti = document.getElementById("btnAvanti");
   domande.innerText = containerDomandeRisposte[contatoreClickAvanti].question;
   const questionNumber = document.querySelector("h3 span");
-  questionNumber.innerText = "QUESTION " + y;
-  contatoreClickAvanti += 1;
+  questionNumber.innerText = "QUESTION" + y;
+
   y += 1;
   if (y == 10) {
-    buttonAvanti.innerHTML = ` <a href="/result.html">Risultati</a> `;
+    buttonAvanti.innerHTML = '<a href="/results.html">Risultati</a>';
   }
   const risposte = document.querySelectorAll(".button-answer");
   for (let i = 0; i < risposte.length; i++) {
     risposte[i].classList.remove("buttonColored");
   }
   cambiaRisposte();
+  //console.log(contatoreClickAvanti);
+  contatoreClickAvanti += 1;
+  clearInterval(intervallo);
+  countDown = 61;
+  graficoTorta();
 };
+
 for (let n = 0; n < 10; n++) {
   containerDomandeRisposte[n].incorrect_answers.push(containerDomandeRisposte[n].correct_answer);
-  // console.log(containerDomandeRisposte[n].incorrect_answers);
 }
-let h = 0;
-const cambiaRisposte = function () {
-  let arrayRisposte = [];
-  const risposte = document.querySelectorAll(".button-answer");
-  arrayRisposte = containerDomandeRisposte.map((element) => element.incorrect_answers);
-  let x = 0;
 
-  for (let j = 0; j < arrayRisposte.length; j++) {
-    if (arrayRisposte[j].length == 2) {
-      n = 2;
-    } else {
-      n = 4;
-    }
-  }
-  for (let w = 0; w < n; w++) {
-    risposte[x].innerText = " ";
-    risposte[x].innerText = arrayRisposte[h][w];
-    x += 1;
-  }
-
-  if (arrayRisposte[h].length == 2) {
-    const RisposteSotto = document.querySelector("section.answers2"); // risposte =2 mette classe hide sul buttonrisposte sotto
-    RisposteSotto.classList.add("hide");
+let counter = 0;
+const risposteGiuste = [];
+const risposteSbagliate = [];
+const btnInteraction = function (event) {
+  elemento = event.target;
+  elemento.classList.toggle("buttonColored");
+  if (elemento.innerText === containerDomandeRisposte[counter].correct_answer) {
+    console.log("risposta giusta");
+    risposteGiuste.push(elemento.innerText);
   } else {
-    const RisposteSotto = document.querySelector("section.answers2"); // risposte diverse  da 2 rimuove la classe hide
-    RisposteSotto.classList.remove("hide");
+    console.log("risposta sbagliata");
+    risposteSbagliate.push(elemento.innerText);
   }
-
-  h += 1;
+  counter += 1;
+  if (counter === 10) {
+    console.log(risposteGiuste);
+  }
+  console.log((risposteGiuste.length / 10) * 100);
+  console.log((risposteSbagliate.length / 10) * 100);
+  const percentualeRisposteGiuste = (risposteGiuste.length / 10) * 100;
+  const percentualeRisposteSbagliate = (risposteSbagliate.length / 10) * 100;
+  return risposteGiuste, risposteSbagliate, percentualeRisposteGiuste, percentualeRisposteSbagliate;
 };
+const pResultCorrect = document.getElementById("resultCorretti");
+pResultCorrect.innerText = percentualeRisposteGiuste;
 
-let seconds = document.getElementById("seconds");
-let ss = document.getElementById("ss");
-let secDot = document.querySelector(".dots-sec_dot");
+const pResultWrong = document.getElementById("resultSbagliati");
+pResultWrong.innerText = percentualeRisposteSbagliate;
 
-let countDown = 60; // Imposta il valore di countdown a 60 secondi
-let s = countDown; // Imposta il valore iniziale dei secondi al valore di countdown
+const segment2 = document.querySelector(".segment2");
+console.log(segment2);
+segment2.setAttribute("stroke-dashoffset", percentualeRisposteGiuste);
 
-seconds.innerText = s; // Mostra il valore iniziale dei secondi
-let x = setInterval(function () {
-  s--;
-
-  seconds.innerText = s; // Aggiorna il valore dei secondi
-
-  ss.style.strokeDashoffset = 385 + (385 * s) / countDown;
-  ss.style.stroke = "#00FFFF";
-
-  if (s === 0) {
-    clearInterval(x); // Ferma il timer quando raggiunge 0
-  }
-}, 1000);
-const buttonAvanti = document.getElementById("btnAvanti");
-console.log(buttonAvanti);
-if (buttonAvanti.onclick) {
-  s = 60;
-}
+graficoTorta();
