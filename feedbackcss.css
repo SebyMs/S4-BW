@@ -1,0 +1,101 @@
+body{margin: 0;font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./assets/bg.jpg);
+    background-repeat: no-repeat;
+   background-size: cover ;
+margin-inline: auto;}
+
+
+
+
+header img{ width: 10%;
+margin-left: 120px;
+margin-top: 50px;}
+
+h1{font-size: 60px;
+color: white;
+text-align: center;
+padding-top: 60px;}
+
+main p { color: white;
+font-size: 30px;
+text-align: center;
+margin: 50px 0;}
+
+div p{ font-size: 30px;
+color: white;
+text-align: center;}
+
+.feedback{font-size: 30px;
+    color: white;
+    text-align: center;
+padding-top: 50px;}
+
+.input{
+    margin-left: 570px;
+    margin-right: 570px;
+}
+
+div input{
+    width:100%;
+    height: 30px;
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    margin-left: 20px;
+
+
+}
+
+
+.star-rating{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content:center;
+    padding:20px;
+    
+    
+   
+  }
+   .star-rating input {
+    display:none;} 
+
+
+.star-rating label {
+    filter: brightness(0.2);
+    cursor:pointer;
+    
+  }
+  
+  
+  .star-rating :checked~label {
+      filter: brightness(1);}
+     
+      
+  
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    filter: brightness(0.5);
+  }
+   
+
+
+
+
+
+hr{background-color:#D20094;
+height: 1px;
+border: 0;
+width: 100%;}
+
+
+.button{text-align: center;
+margin: 70px 0px;
+
+}
+
+div button{background-color: #00FFFF;
+width: 200px;
+height: 50px;
+... (48 righe a disposizione)
